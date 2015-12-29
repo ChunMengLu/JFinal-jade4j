@@ -11,7 +11,6 @@ import com.jfinal.core.JFinal;
 import com.jfinal.render.Render;
 import com.jfinal.render.RenderException;
 
-import de.neuland.jade4j.Jade4J;
 import de.neuland.jade4j.JadeConfiguration;
 import de.neuland.jade4j.template.JadeTemplate;
 
@@ -65,7 +64,7 @@ public class JadeRender extends Render {
 		try {
 			JadeTemplate template = config.getTemplate(view);
 			writer = response.getWriter();
-			Jade4J.render(template, model, writer);
+			config.renderTemplate(template, model, writer);
 		} catch (Exception e) {
 			throw new RenderException(e);
 		}
