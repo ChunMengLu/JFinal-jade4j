@@ -33,9 +33,15 @@ public class JadeRender extends Render {
 	@SuppressWarnings("unchecked")
 	public void render() {
 		response.setContentType(contentType);
+		Map<String, Object> model = new HashMap<String, Object>();
+		// request paras
+		Enumeration<String> paras = request.getParameterNames();
+		while (paras.hasMoreElements()) {
+			String parasName = paras.nextElement();
+			model.put(parasName, request.getParameter(parasName));
+		}
 		// request attrs
 		Enumeration<String> attrs = request.getAttributeNames();
-		Map<String, Object> model = new HashMap<String, Object>();
 		while (attrs.hasMoreElements()) {
 			String attrName = attrs.nextElement();
 			model.put(attrName, request.getAttribute(attrName));
@@ -51,7 +57,10 @@ public class JadeRender extends Render {
 			model.put("session", session);
 		}
 		model.put("ctxPath", JFinal.me().getContextPath());
-		
+		// request and response
+		model.put("request", request);
+		model.put("response", response);
+		// render model
 		PrintWriter writer = null;
 		try {
 			JadeTemplate template = config.getTemplate(view);

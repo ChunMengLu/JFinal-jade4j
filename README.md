@@ -7,7 +7,7 @@ JFinal的jade模板插件
 <dependency>
     <groupId>net.dreamlu</groupId>
     <artifactId>JFinal-jade4j</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
@@ -30,6 +30,13 @@ jade4j：https://github.com/neuland/jade4j
 //自带contextPath，0.0.2添加
 #{ctxPath}
 ```
+
+## 说明
+> 0.0.2添加request parameters，默认将请求参数带入模板中，会被request.setAttribute。
+
+> 0.0.2传递request and response到模板中
+
+> 0.0.2添加ctxPath
 
 ## 交流群
 如梦技术：[`237587118`](http://shang.qq.com/wpa/qunwpa?idkey=f78fcb750b4f72c92ff4d375d2884dd69b552301a1f2681af956bd32700eb2c0)
