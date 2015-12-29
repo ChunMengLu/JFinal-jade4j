@@ -2,6 +2,15 @@
 JFinal的jade模板插件
 
 ## 使用
+### maven引入
+```xml
+<dependency>
+    <groupId>net.dreamlu</groupId>
+    <artifactId>JFinal-jade4j</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
 ### JFinal中配置
 ```java
 me.setMainRenderFactory(new JadeRenderFactory());
@@ -18,6 +27,8 @@ jade4j：https://github.com/neuland/jade4j
 ```java
 //session的获取
 #{session.xxxxx}
+//自带contextPath，0.0.2添加
+#{ctxPath}
 ```
 
 ## 交流群

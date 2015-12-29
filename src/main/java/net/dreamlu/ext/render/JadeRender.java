@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import com.jfinal.core.JFinal;
 import com.jfinal.render.Render;
 import com.jfinal.render.RenderException;
 
@@ -49,6 +50,8 @@ public class JadeRender extends Render {
 			}
 			model.put("session", session);
 		}
+		model.put("ctxPath", JFinal.me().getContextPath());
+		
 		PrintWriter writer = null;
 		try {
 			JadeTemplate template = config.getTemplate(view);
