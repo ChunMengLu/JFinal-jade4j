@@ -32,7 +32,7 @@ jade4j：https://github.com/neuland/jade4j
 ```
 
 ## 说明
-> 0.0.2添加request parameters，默认将请求参数带入模板中，会被request.setAttribute。
+> 0.0.2添加request parameters，默认将请求参数带入模板中，同名会被request.setAttribute覆盖
 
 > 0.0.2传递request and response到模板中
 
