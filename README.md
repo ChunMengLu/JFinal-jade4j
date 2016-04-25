@@ -32,10 +32,14 @@ jade4j：https://github.com/neuland/jade4j
 ```
 
 ## 说明
+### v0.0.3
+> 升级jade4j,修改prettyPrint默认只在开发模式下为true
+
+### v0.0.2
 > 0.0.2添加request parameters，默认将请求参数带入模板中，会被request.setAttribute。
-
+>
 > 0.0.2传递request and response到模板中
-
+>
 > 0.0.2添加ctxPath
 
 ## 交流群

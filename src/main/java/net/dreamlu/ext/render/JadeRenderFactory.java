@@ -31,9 +31,11 @@ public class JadeRenderFactory implements IMainRenderFactory {
 
 		TemplateLoader loader = new FileTemplateLoader(root, encoding);
 		config.setTemplateLoader(loader);
-		config.setPrettyPrint(true);
 		boolean devMode = JFinal.me().getConstants().getDevMode();
-		config.setCaching(!devMode);
+		if (devMode) {
+			config.setCaching(false);
+			config.setPrettyPrint(true);
+		}
 	}
 
 	public Render getRender(String view) {
